@@ -12,7 +12,7 @@
       <link>https://wod3xinhaoleng.github.io/synapse-docs/docs/sunline/dbs/source-code-delivery/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://wod3xinhaoleng.github.io/synapse-docs/docs/sunline/dbs/source-code-delivery/</guid>
-      <description>&lt;h1 id=&#34;source-code-delivery&#34;&gt;Source code delivery&lt;a class=&#34;anchor&#34; href=&#34;#source-code-delivery&#34;&gt;#&lt;/a&gt;&lt;/h1&gt;&#xA;&lt;h2 id=&#34;code-quality-delivery-requirements&#34;&gt;Code quality delivery requirements&lt;a class=&#34;anchor&#34; href=&#34;#code-quality-delivery-requirements&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;所有的配置文件中不能包含密钥；&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+      <description>&lt;h1 id=&#34;source-code-delivery&#34;&gt;Source code delivery&lt;a class=&#34;anchor&#34; href=&#34;#source-code-delivery&#34;&gt;#&lt;/a&gt;&lt;/h1&gt;&#xA;&lt;h2 id=&#34;code-quality-delivery-requirements&#34;&gt;Code quality delivery requirements&lt;a class=&#34;anchor&#34; href=&#34;#code-quality-delivery-requirements&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;配置文件不能包含密钥配置；&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
     </item>
   </channel>
 </rss>
