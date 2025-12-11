@@ -7,4 +7,4 @@ weight: 1
 
 ## Code quality delivery requirements
 
-1. 所有的配置文件中不能包含密钥；
+1. 配置文件不能包含密钥配置；
