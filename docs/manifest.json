@@ -1,6 +1,6 @@
 {
-  "name": "My New Hugo Site",
-  "short_name": "My New Hugo Site",
+  "name": "synapse-docs",
+  "short_name": "synapse-docs",
   "start_url": "/synapse-docs/",
   "scope": "/synapse-docs/",
   "display": "standalone",

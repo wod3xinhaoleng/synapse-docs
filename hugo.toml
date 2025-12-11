@@ -1,8 +1,5 @@
 baseURL = 'https://wod3xinhaoleng.github.io/synapse-docs/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'synapse-docs'
 theme = 'hugo-book'
 
-[params]
-enableThemeSwitch = true
-defaultTheme = "light"
