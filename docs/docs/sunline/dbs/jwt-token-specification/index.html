@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="JWT token# Public endpoints configuration# 为了增加系统的耐操性，接口白名单配置需要支持 默认&#43;增量 的配置方式。防止漏配或者配错。
+Detailed Design# 配置类 PublicEndpointsCfg.java
+Example# DBS 项目的默认白名单配置。其余项目 API 不一定一致，但是需要保证这些功能一定要放行。
+package cn.sunline.euc.bcb.config; import jakarta.annotation.PostConstruct; import java.util.ArrayList; import java.util.List; import lombok.Getter; import lombok.Setter; import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty; import org.springframework.boot.context.properties.ConfigurationProperties; import org.springframework.stereotype.Component; @Getter @Setter @Component @ConfigurationProperties(prefix = &#34;twsp.security.authentication.public&#34;) @ConditionalOnProperty( prefix = &#34;spring.security&#34;, name = &#34;enable&#34;, havingValue = &#34;true&#34;, matchIfMissing = false ) public class PublicEndpointsCfg { private List&lt;String&gt; endpoints; @PostConstruct public void init() { if (null == endpoints) { endpoints = new ArrayList&lt;&gt;(); } endpoints.add(&#34;/twsp/eu8500&#34;); // query branch endpoints.add(&#34;/twsp/eu8502&#34;); // logout endpoints.add(&#34;/twsp/eu8503&#34;); // login endpoints.add(&#34;/twsp/eu8504&#34;); // refresh_token endpoints.add(&#34;/twsp/expression&#34;); // ui endpoints.add(&#34;/twsp/et*&#34;); // easy task endpoints.add(&#34;/twsp/ef*&#34;); // easy flow endpoints.add(&#34;/ET/*&#34;); // way task endpoints.add(&#34;/EF/*&#34;); // easy flow endpoints.add(&#34;/aps-service&#34;); // governor ui endpoints.add(&#34;/apsService&#34;); // governor client } }">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://wod3xinhaoleng.github.io/synapse-docs/docs/sunline/dbs/jwt-token-specification/">
+  <meta property="og:site_name" content="Synapse-docs">
+  <meta property="og:title" content="Jwt token">
+  <meta property="og:description" content="JWT token# Public endpoints configuration# 为了增加系统的耐操性，接口白名单配置需要支持 默认&#43;增量 的配置方式。防止漏配或者配错。
+Detailed Design# 配置类 PublicEndpointsCfg.java
+Example# DBS 项目的默认白名单配置。其余项目 API 不一定一致，但是需要保证这些功能一定要放行。
+package cn.sunline.euc.bcb.config; import jakarta.annotation.PostConstruct; import java.util.ArrayList; import java.util.List; import lombok.Getter; import lombok.Setter; import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty; import org.springframework.boot.context.properties.ConfigurationProperties; import org.springframework.stereotype.Component; @Getter @Setter @Component @ConfigurationProperties(prefix = &#34;twsp.security.authentication.public&#34;) @ConditionalOnProperty( prefix = &#34;spring.security&#34;, name = &#34;enable&#34;, havingValue = &#34;true&#34;, matchIfMissing = false ) public class PublicEndpointsCfg { private List&lt;String&gt; endpoints; @PostConstruct public void init() { if (null == endpoints) { endpoints = new ArrayList&lt;&gt;(); } endpoints.add(&#34;/twsp/eu8500&#34;); // query branch endpoints.add(&#34;/twsp/eu8502&#34;); // logout endpoints.add(&#34;/twsp/eu8503&#34;); // login endpoints.add(&#34;/twsp/eu8504&#34;); // refresh_token endpoints.add(&#34;/twsp/expression&#34;); // ui endpoints.add(&#34;/twsp/et*&#34;); // easy task endpoints.add(&#34;/twsp/ef*&#34;); // easy flow endpoints.add(&#34;/ET/*&#34;); // way task endpoints.add(&#34;/EF/*&#34;); // easy flow endpoints.add(&#34;/aps-service&#34;); // governor ui endpoints.add(&#34;/apsService&#34;); // governor client } }">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Jwt token">
+  <meta itemprop="description" content="JWT token# Public endpoints configuration# 为了增加系统的耐操性，接口白名单配置需要支持 默认&#43;增量 的配置方式。防止漏配或者配错。
+Detailed Design# 配置类 PublicEndpointsCfg.java
+Example# DBS 项目的默认白名单配置。其余项目 API 不一定一致，但是需要保证这些功能一定要放行。
+package cn.sunline.euc.bcb.config; import jakarta.annotation.PostConstruct; import java.util.ArrayList; import java.util.List; import lombok.Getter; import lombok.Setter; import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty; import org.springframework.boot.context.properties.ConfigurationProperties; import org.springframework.stereotype.Component; @Getter @Setter @Component @ConfigurationProperties(prefix = &#34;twsp.security.authentication.public&#34;) @ConditionalOnProperty( prefix = &#34;spring.security&#34;, name = &#34;enable&#34;, havingValue = &#34;true&#34;, matchIfMissing = false ) public class PublicEndpointsCfg { private List&lt;String&gt; endpoints; @PostConstruct public void init() { if (null == endpoints) { endpoints = new ArrayList&lt;&gt;(); } endpoints.add(&#34;/twsp/eu8500&#34;); // query branch endpoints.add(&#34;/twsp/eu8502&#34;); // logout endpoints.add(&#34;/twsp/eu8503&#34;); // login endpoints.add(&#34;/twsp/eu8504&#34;); // refresh_token endpoints.add(&#34;/twsp/expression&#34;); // ui endpoints.add(&#34;/twsp/et*&#34;); // easy task endpoints.add(&#34;/twsp/ef*&#34;); // easy flow endpoints.add(&#34;/ET/*&#34;); // way task endpoints.add(&#34;/EF/*&#34;); // easy flow endpoints.add(&#34;/aps-service&#34;); // governor ui endpoints.add(&#34;/apsService&#34;); // governor client } }">
+  <meta itemprop="wordCount" content="119">
+
+<title>Jwt token | Synapse-docs</title>
+<link rel="icon" href="/synapse-docs/favicon.png" >
+<link rel="manifest" href="/synapse-docs/manifest.json">
+<link rel="canonical" href="https://wod3xinhaoleng.github.io/synapse-docs/docs/sunline/dbs/jwt-token-specification/">
+<link rel="stylesheet" href="/synapse-docs/book.min.cc2c524ed250aac81b23d1f4af87344917b325208841feca0968fe450f570575.css" integrity="sha256-zCxSTtJQqsgbI9H0r4c0SRezJSCIQf7KCWj&#43;RQ9XBXU=" crossorigin="anonymous">
+
+
+  <script defer src="/synapse-docs/fuse.min.js"></script>
+  <script defer src="/synapse-docs/en.search.min.021b22b97859e7f7257302bbad1baaa58c38b7c1288c97404d742ba14699c6a3.js" integrity="sha256-AhsiuXhZ5/clcwK7rRuqpYw4t8EojJdATXQroUaZxqM=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/synapse-docs/"><span>Synapse-docs</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a>
+      Sunline</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9a0609225e1af6ff55b53a34de5bd507" class="toggle" checked />
+    <label for="section-9a0609225e1af6ff55b53a34de5bd507" class="flex">
+      <a href="/synapse-docs/docs/sunline/dbs/" class="">
+        DBS</a>
+      <img src="/synapse-docs/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/synapse-docs/docs/sunline/dbs/jwt-token-specification/" class="active">
+      Jwt token</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/synapse-docs/docs/sunline/dbs/source-code-delivery/" class="">
+      Source code delivery</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a>
+      Shortcodes</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/synapse-docs/docs/shortcodes/buttons/" class="">
+      Buttons</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/synapse-docs/docs/shortcodes/columns/" class="">
+      Columns</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/synapse-docs/docs/shortcodes/details/" class="">
+      Details</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3401d2c225b6cf8e239eaa8eaa3bbb38" class="toggle"  />
+    <label for="section-3401d2c225b6cf8e239eaa8eaa3bbb38" class="flex">
+      <a role="button" class="">
+        Experimental</a>
+      <img src="/synapse-docs/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/synapse-docs/docs/shortcodes/experimental/asciinema/" class="">
+      Asciinema</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/synapse-docs/docs/shortcodes/experimental/badges/" class="">
+      Badges</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/synapse-docs/docs/shortcodes/experimental/cards/" class="">
+      Cards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/synapse-docs/docs/shortcodes/experimental/images/" class="">
+      Images</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/synapse-docs/docs/shortcodes/hints/" class="">
+      Hints</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/synapse-docs/docs/shortcodes/mermaid/" class="">
+      Mermaid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/synapse-docs/docs/shortcodes/steps/" class="">
+      Steps</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/synapse-docs/docs/shortcodes/tabs/" class="">
+      Tabs</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/synapse-docs/docs/shortcodes/katex/" class="">
+      KaTeX</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/synapse-docs/docs/example/" class="">
+      Example Site</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/synapse-docs/docs/example/table-of-contents/" class="">
+      Table of Contents</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/synapse-docs/docs/example/table-of-contents/with-toc/" class="">
+      With ToC</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/synapse-docs/docs/example/table-of-contents/without-toc/" class="">
+      Without ToC</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e4cbb7f64cf3fde05290857cf85d36f3" class="toggle"  />
+    <label for="section-e4cbb7f64cf3fde05290857cf85d36f3" class="flex">
+      <a role="button" class="">
+        Collapsed</a>
+      <img src="/synapse-docs/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/synapse-docs/docs/example/collapsed/3rd-level/" class="">
+      3rd Level</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/synapse-docs/docs/example/collapsed/3rd-level/4th-level/" class="">
+      4th Level</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+<ul><li><a href="/synapse-docs/posts/" title="Blog">Blog</a></li></ul>
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/synapse-docs/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Jwt token</h3>
+
+  <label for="toc-control">
+    
+    <img src="/synapse-docs/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#public-endpoints-configuration">Public endpoints configuration</a>
+      <ul>
+        <li><a href="#detailed-design">Detailed Design</a></li>
+        <li><a href="#example">Example</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="jwt-token">JWT token<a class="anchor" href="#jwt-token">#</a></h1>
+<h2 id="public-endpoints-configuration">Public endpoints configuration<a class="anchor" href="#public-endpoints-configuration">#</a></h2>
+<p>为了增加系统的耐操性，接口白名单配置需要支持 默认+增量 的配置方式。防止漏配或者配错。</p>
+<h3 id="detailed-design">Detailed Design<a class="anchor" href="#detailed-design">#</a></h3>
+<p>配置类 <code>PublicEndpointsCfg.java</code></p>
+<h3 id="example">Example<a class="anchor" href="#example">#</a></h3>
+<p>DBS 项目的默认白名单配置。其余项目 API 不一定一致，但是需要保证这些功能一定要放行。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> cn.sunline.euc.bcb.config;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> jakarta.annotation.PostConstruct;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.ArrayList;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> lombok.Getter;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> lombok.Setter;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.boot.context.properties.ConfigurationProperties;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.stereotype.Component;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Getter</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Setter</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Component</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@ConfigurationProperties</span>(prefix <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;twsp.security.authentication.public&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@ConditionalOnProperty</span>(
+</span></span><span style="display:flex;"><span>    prefix <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;spring.security&#34;</span>,
+</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;enable&#34;</span>,
+</span></span><span style="display:flex;"><span>    havingValue <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;true&#34;</span>,
+</span></span><span style="display:flex;"><span>    matchIfMissing <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PublicEndpointsCfg</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> endpoints;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@PostConstruct</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">init</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">null</span> <span style="color:#f92672">==</span> endpoints) {
+</span></span><span style="display:flex;"><span>            endpoints <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        endpoints.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;/twsp/eu8500&#34;</span>); <span style="color:#75715e">// query branch</span>
+</span></span><span style="display:flex;"><span>        endpoints.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;/twsp/eu8502&#34;</span>); <span style="color:#75715e">// logout</span>
+</span></span><span style="display:flex;"><span>        endpoints.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;/twsp/eu8503&#34;</span>); <span style="color:#75715e">// login</span>
+</span></span><span style="display:flex;"><span>        endpoints.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;/twsp/eu8504&#34;</span>); <span style="color:#75715e">// refresh_token</span>
+</span></span><span style="display:flex;"><span>        endpoints.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;/twsp/expression&#34;</span>);  <span style="color:#75715e">// ui</span>
+</span></span><span style="display:flex;"><span>        endpoints.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;/twsp/et*&#34;</span>); <span style="color:#75715e">// easy task</span>
+</span></span><span style="display:flex;"><span>        endpoints.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;/twsp/ef*&#34;</span>); <span style="color:#75715e">// easy flow</span>
+</span></span><span style="display:flex;"><span>        endpoints.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;/ET/*&#34;</span>); <span style="color:#75715e">// way task</span>
+</span></span><span style="display:flex;"><span>        endpoints.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;/EF/*&#34;</span>); <span style="color:#75715e">// easy flow</span>
+</span></span><span style="display:flex;"><span>        endpoints.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;/aps-service&#34;</span>);  <span style="color:#75715e">// governor ui</span>
+</span></span><span style="display:flex;"><span>        endpoints.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;/apsService&#34;</span>);   <span style="color:#75715e">// governor client</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/synapse-docs/docs/sunline/dbs/" class="flex align-center">
+        <img src="/synapse-docs/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>DBS</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/synapse-docs/docs/sunline/dbs/source-code-delivery/" class="flex align-center">
+        <span>Source code delivery</span>
+        <img src="/synapse-docs/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#public-endpoints-configuration">Public endpoints configuration</a>
+      <ul>
+        <li><a href="#detailed-design">Detailed Design</a></li>
+        <li><a href="#example">Example</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

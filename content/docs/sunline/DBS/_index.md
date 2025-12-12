@@ -5,7 +5,7 @@ bookCollapseSection: true
 
 # Environments
 
-## DEV_5
+## DEV5
 
 ### Links
 
@@ -15,6 +15,28 @@ bookCollapseSection: true
 | [aps-governor-ui](http://10.10.21.44:22080) | admin   | Aa123456. |
 
 ### Database
+
+## FAT2
+
+### Links
+
+| Links                                       | Account | Password  |
+| ------------------------------------------- | ------- | --------- |
+| [bms-ui](http://10.10.21.44:9505)           | 21022   | 888888    |
+| [aps-governor-ui](http://10.10.21.44:22080) | admin   | Aa123456. |
+
+### Repository
+
+- [bms-menu-dbscripts](http://10.10.20.150/DBS/EFT/CBCORESG_PRODUCT/bms-menu-dbscripts)
+- [bms-menu-config](http://10.10.20.150/DBS/EFT/CBCORESG_PRODUCT/bms-menu-config)
+- [bms-menu-backend](http://10.10.20.150/DBS/EFT/CBCORESG_PRODUCT/bms-menu-backend)
+- [bms-menu-ui-framework](http://10.10.20.150/DBS/EFT/CBCORESG_PRODUCT/bms-menu-ui-framework)
+- [bms-menu-ui](http://10.10.20.150/DBS/EFT/CBCORESG_PRODUCT/bms-menu-ui)
+- [sg-nonbiz-bms-menu-dbscripts](http://10.10.20.150/DBS/EFT/CBCORESG_NONBIZ/sg-nonbiz-bms-menu-dbscripts)
+- [sg-nonbiz-bms-menu-config](http://10.10.20.150/DBS/EFT/CBCORESG_NONBIZ/sg-nonbiz-bms-menu-config)
+- [sg-nonbiz-bms-menu-backend](http://10.10.20.150/DBS/EFT/CBCORESG_NONBIZ/sg-nonbiz-bms-menu-backend)
+- [sg-nonbiz-bms-menu-ui-framework](http://10.10.20.150/DBS/EFT/CBCORESG_NONBIZ/sg-nonbiz-bms-menu-ui-framework)
+- [sg-nonbiz-bms-menu-ui](http://10.10.20.150/DBS/EFT/CBCORESG_NONBIZ/sg-nonbiz-bms-menu-ui)
 
 ## UAT
 
