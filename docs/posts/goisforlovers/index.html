@@ -14,7 +14,7 @@ This document is a brief primer on using Go templates. The Go docs provide more 
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://wod3xinhaoleng.github.io/synapse-docs/posts/goisforlovers/">
-  <meta property="og:site_name" content="synapse-docs">
+  <meta property="og:site_name" content="Synapse-docs">
   <meta property="og:title" content="(Hu)go Template Primer">
   <meta property="og:description" content="Hugo uses the excellent Go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in Go templates.
 This document is a brief primer on using Go templates. The Go docs provide more details.">
@@ -38,7 +38,7 @@ This document is a brief primer on using Go templates. The Go docs provide more 
   <meta itemprop="wordCount" content="1483">
   <meta itemprop="keywords" content="Go,Golang,Templates,Themes,Development">
 
-<title>(Hu)go Template Primer | synapse-docs</title>
+<title>(Hu)go Template Primer | Synapse-docs</title>
 <link rel="icon" href="/synapse-docs/favicon.png" >
 <link rel="manifest" href="/synapse-docs/manifest.json">
 <link rel="canonical" href="https://wod3xinhaoleng.github.io/synapse-docs/posts/goisforlovers/">
@@ -46,7 +46,7 @@ This document is a brief primer on using Go templates. The Go docs provide more 
 
 
   <script defer src="/synapse-docs/fuse.min.js"></script>
-  <script defer src="/synapse-docs/en.search.min.c9e28db576dba913a728fff60f703b5ed954591dd2ac519d1abeafe7d553a68b.js" integrity="sha256-yeKNtXbbqROnKP/2D3A7XtlUWR3SrFGdGr6v59VTpos=" crossorigin="anonymous"></script>
+  <script defer src="/synapse-docs/en.search.min.ecac031b6c4211ccdde51f9480da4edd22a0aeb27b92c94156792812ed3432aa.js" integrity="sha256-7KwDG2xCEczd5R&#43;UgNpO3SKgrrJ7kslBVnkoEu00Mqo=" crossorigin="anonymous"></script>
 
 
 
@@ -62,7 +62,7 @@ This document is a brief primer on using Go templates. The Go docs provide more 
     
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/synapse-docs/"><span>synapse-docs</span>
+  <a class="flex align-center" href="/synapse-docs/"><span>Synapse-docs</span>
   </a>
 </h2>
 
@@ -99,8 +99,8 @@ This document is a brief primer on using Go templates. The Go docs provide more 
   
 
   
-    <a href="/synapse-docs/docs/example/" class="">
-      Example Site</a>
+    <a>
+      Sunline</a>
   
 
           
@@ -113,57 +113,10 @@ This document is a brief primer on using Go templates. The Go docs provide more 
   
 
   
-    <a href="/synapse-docs/docs/example/table-of-contents/" class="">
-      Table of Contents</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/synapse-docs/docs/example/table-of-contents/with-toc/" class="">
-      With ToC</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/synapse-docs/docs/example/table-of-contents/without-toc/" class="">
-      Without ToC</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-e4cbb7f64cf3fde05290857cf85d36f3" class="toggle"  />
-    <label for="section-e4cbb7f64cf3fde05290857cf85d36f3" class="flex">
-      <a role="button" class="">
-        Collapsed</a>
+    <input type="checkbox" id="section-9a0609225e1af6ff55b53a34de5bd507" class="toggle"  />
+    <label for="section-9a0609225e1af6ff55b53a34de5bd507" class="flex">
+      <a href="/synapse-docs/docs/sunline/dbs/" class="">
+        DBS</a>
       <img src="/synapse-docs/icons/chevron-right.svg" class="book-icon" alt="Expand" />
     </label>
   
@@ -178,28 +131,9 @@ This document is a brief primer on using Go templates. The Go docs provide more 
   
 
   
-    <a href="/synapse-docs/docs/example/collapsed/3rd-level/" class="">
-      3rd Level</a>
+    <a href="/synapse-docs/docs/sunline/dbs/source-code-delivery/" class="">
+      Source code delivery</a>
   
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/synapse-docs/docs/example/collapsed/3rd-level/4th-level/" class="">
-      4th Level</a>
-  
-
-        </li>
-      
-    
-  </ul>
 
         </li>
       
@@ -431,8 +365,8 @@ This document is a brief primer on using Go templates. The Go docs provide more 
   
 
   
-    <a>
-      Sunline</a>
+    <a href="/synapse-docs/docs/example/" class="">
+      Example Site</a>
   
 
           
@@ -445,10 +379,57 @@ This document is a brief primer on using Go templates. The Go docs provide more 
   
 
   
-    <input type="checkbox" id="section-9a0609225e1af6ff55b53a34de5bd507" class="toggle"  />
-    <label for="section-9a0609225e1af6ff55b53a34de5bd507" class="flex">
-      <a href="/synapse-docs/docs/sunline/dbs/" class="">
-        DBS</a>
+    <a href="/synapse-docs/docs/example/table-of-contents/" class="">
+      Table of Contents</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/synapse-docs/docs/example/table-of-contents/with-toc/" class="">
+      With ToC</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/synapse-docs/docs/example/table-of-contents/without-toc/" class="">
+      Without ToC</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e4cbb7f64cf3fde05290857cf85d36f3" class="toggle"  />
+    <label for="section-e4cbb7f64cf3fde05290857cf85d36f3" class="flex">
+      <a role="button" class="">
+        Collapsed</a>
       <img src="/synapse-docs/icons/chevron-right.svg" class="book-icon" alt="Expand" />
     </label>
   
@@ -463,9 +444,28 @@ This document is a brief primer on using Go templates. The Go docs provide more 
   
 
   
-    <a href="/synapse-docs/docs/sunline/dbs/source-code-delivery/" class="">
-      Source code delivery</a>
+    <a href="/synapse-docs/docs/example/collapsed/3rd-level/" class="">
+      3rd Level</a>
   
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/synapse-docs/docs/example/collapsed/3rd-level/4th-level/" class="">
+      4th Level</a>
+  
+
+        </li>
+      
+    
+  </ul>
 
         </li>
       

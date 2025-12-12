@@ -1,6 +1,6 @@
 {
-  "name": "synapse-docs",
-  "short_name": "synapse-docs",
+  "name": "Synapse-docs",
+  "short_name": "Synapse-docs",
   "start_url": "/synapse-docs/",
   "scope": "/synapse-docs/",
   "display": "standalone",

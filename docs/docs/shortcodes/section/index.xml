@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>synapse-docs</title>
+    <title>Synapse-docs</title>
     <link>https://wod3xinhaoleng.github.io/synapse-docs/docs/shortcodes/section/</link>
-    <description>Recent content on synapse-docs</description>
+    <description>Recent content on Synapse-docs</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://wod3xinhaoleng.github.io/synapse-docs/docs/shortcodes/section/index.xml" rel="self" type="application/rss+xml" />

@@ -55,7 +55,6 @@ bookCollapseSection: true
 
 - [bms-menu-dbscripts](https://cloud-jenkins.odc.sunline.cn/job/projects/job/dbs/job/source-code-delivery/job/cbcoresg_product/job/bms-menu-dbscripts/build?delay=0sec)
 - [bms-menu-config](https://cloud-jenkins.odc.sunline.cn/job/projects/job/dbs/job/source-code-delivery/job/cbcoresg_product/job/bms-menu-config/)
-
 - [bms-menu-backend](https://cloud-jenkins.odc.sunline.cn/job/projects/job/dbs/job/source-code-delivery/job/cbcoresg_product/job/bms-menu-backend/)
 - [bms-menu-ui-framework](https://cloud-jenkins.odc.sunline.cn/job/projects/job/dbs/job/source-code-delivery/job/cbcoresg_product/job/bms-menu-ui-framework/)
 - [bms-menu-ui](https://cloud-jenkins.odc.sunline.cn/job/projects/job/dbs/job/source-code-delivery/job/cbcoresg_product/job/bms-menu-ui)
