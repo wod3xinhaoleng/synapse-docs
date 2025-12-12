@@ -20,10 +20,9 @@ bookCollapseSection: true
 
 ### Links
 
-| Links                                       | Account | Password  |
-| ------------------------------------------- | ------- | --------- |
-| [bms-ui](http://10.10.21.44:9505)           | 21022   | 888888    |
-| [aps-governor-ui](http://10.10.21.44:22080) | admin   | Aa123456. |
+| Links                                         | Account | Password |
+| --------------------------------------------- | ------- | -------- |
+| [bms-ui](http://bms-ui.dbs-fat2.sunline.lab/) | 00068   | 888888   |
 
 ### Repository
 
