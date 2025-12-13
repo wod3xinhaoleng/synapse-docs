@@ -4,11 +4,13 @@
   <url>
     <loc>https://wod3xinhaoleng.github.io/synapse-docs/docs/sunline/</loc>
   </url><url>
-    <loc>https://wod3xinhaoleng.github.io/synapse-docs/docs/sunline/jwt-token-specification/</loc>
+    <loc>https://wod3xinhaoleng.github.io/synapse-docs/docs/sunline/dbs/</loc>
   </url><url>
     <loc>https://wod3xinhaoleng.github.io/synapse-docs/docs/sunline/dbs/source-code-delivery/</loc>
   </url><url>
     <loc>https://wod3xinhaoleng.github.io/synapse-docs/docs/example/table-of-contents/with-toc/</loc>
+  </url><url>
+    <loc>https://wod3xinhaoleng.github.io/synapse-docs/docs/sunline/jwt-token-specification/</loc>
   </url><url>
     <loc>https://wod3xinhaoleng.github.io/synapse-docs/docs/example/table-of-contents/without-toc/</loc>
   </url><url>
@@ -101,8 +103,6 @@
     <loc>https://wod3xinhaoleng.github.io/synapse-docs/docs/shortcodes/steps/</loc>
   </url><url>
     <loc>https://wod3xinhaoleng.github.io/synapse-docs/docs/shortcodes/tabs/</loc>
-  </url><url>
-    <loc>https://wod3xinhaoleng.github.io/synapse-docs/docs/sunline/dbs/</loc>
   </url><url>
     <loc>https://wod3xinhaoleng.github.io/synapse-docs/docs/</loc>
   </url><url>

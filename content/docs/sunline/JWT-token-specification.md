@@ -1,6 +1,6 @@
 ---
 title: 'Jwt token'
-weight: 1
+weight: 2
 ---
 
 # JWT token
