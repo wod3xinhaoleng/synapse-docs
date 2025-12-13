@@ -37,6 +37,15 @@ bookCollapseSection: true
 - [sg-nonbiz-bms-menu-ui-framework](http://10.10.20.150/DBS/EFT/CBCORESG_NONBIZ/sg-nonbiz-bms-menu-ui-framework)
 - [sg-nonbiz-bms-menu-ui](http://10.10.20.150/DBS/EFT/CBCORESG_NONBIZ/sg-nonbiz-bms-menu-ui)
 
+### Configuration
+
+> Account: jinyuchen
+>
+> Password: Jj001022!
+
+- [modify config](https://gitlab.odc.sunline.cn/demo/project-configuration/tree/dbs-cd/dbs-fat2)
+- [reflush config](https://cloud-jenkins.odc.sunline.cn/job/projects/job/dbs/job/cd/job/dbs-fat2/job/configuration-reflush/ )
+
 ## UAT
 
 ### Links
